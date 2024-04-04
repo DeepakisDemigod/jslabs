@@ -5,7 +5,7 @@ const RoutesConfig = React.lazy(() => import('./routes/RoutesConfig.jsx'));
 
 const App = () => {
   return (
-    <Router basename='/'>
+    <Router>
       <RoutesConfig />
     </Router>
   );
