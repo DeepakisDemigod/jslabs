@@ -14,8 +14,8 @@ const Home = lazy(() => import('../pages/home/Home'));
 
 const RoutesConfig = () => {
   const paths = {
-    home: 'https://javalabs.vercel.app/',
-    notFound: 'https://javalabs.vercel.app/*'
+    home: '/',
+    notFound: '/*'
   };
 
   return (
