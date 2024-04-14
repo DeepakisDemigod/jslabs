@@ -1,5 +1,5 @@
 import React, { Suspense, lazy } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 /* Suspense Fallback Spinner */
 import { HashLoader } from 'react-spinners';
@@ -20,6 +20,7 @@ const RoutesConfig = () => {
 
   return (
     <>
+     <Router>
       <Navbar />
       <Suspense
         fallback={
@@ -40,6 +41,7 @@ const RoutesConfig = () => {
         </Routes>
       </Suspense>
       <Footer />
+     </Router>
     </>
   );
 };
