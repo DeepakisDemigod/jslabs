@@ -8,13 +8,8 @@ import {
   GlobeHemisphereWest,
   SignOut
 } from 'phosphor-react';
-const Auth = React.lazy(() => import('../auth/Auth.jsx'));
-import Cookies from 'universal-cookie';
-const cookies = new Cookies();
 
 const Navbar = () => {
-  const [isAuth, setIsAuth] = useState(cookies.get('auth-token'));
-
   return (
     <div>
       <div className='drawer'>
@@ -55,20 +50,6 @@ const Navbar = () => {
               >
                 JavaScript Labs
               </a>
-            </div>
-            <div className='navbar-end flex items-center justify-end'>
-              <button className='btn bg-neutral '>
-                <div className='indicator'>
-                  {isAuth ? (
-                    <button className='p-0 m-0 flex items-center justify-center gap-1 btn-xs'>
-                      <SignOut size={16} />
-                      <span>sign-out</span>
-                    </button>
-                  ) : (
-                    <Auth setIsAuth={setIsAuth} />
-                  )}
-                </div>
-              </button>
             </div>
           </div>
 

@@ -13,14 +13,12 @@
     "@codesandbox/sandpack-react": "^2.13.5",
     "@codesandbox/sandpack-themes": "^2.0.21",
     "@tailwindcss/typography": "^0.5.10",
-    "firebase": "^10.11.0",
     "phosphor-react": "^1.4.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.22.1",
     "react-spinners": "^0.13.8",
-    "sandpack-file-explorer": "^0.0.7",
-    "universal-cookie": "^7.1.4"
+    "sandpack-file-explorer": "^0.0.7"
   },
   "devDependencies": {
     "@types/react": "^18.2.56",
