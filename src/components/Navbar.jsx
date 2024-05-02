@@ -93,7 +93,7 @@ const Navbar = () => {
                       <a href='/static'>Static</a>
                     </li>
                     <li>
-                      <a href='/lab/react'>React</a>
+                      <a href='/react'>React</a>
                     </li>
                     <li>
                       <a href='/lab/vanilla'>Vanilla</a>
