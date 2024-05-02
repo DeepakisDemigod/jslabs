@@ -11,40 +11,42 @@ const NotFound = lazy(() => import('../pages/NotFound/NotFound.jsx'));
 
 // Import lazy-loaded components
 const Home = lazy(() => import('../pages/home/Home'));
+const Static = lazy(() => import('../components/Static.jsx'));
 
 const RoutesConfig = () => {
   const paths = {
     home: '/',
+    static: '/static',
     notFound: '/*'
   };
 
   return (
     <>
-     <Router>
-      <Navbar />
-      <Suspense
-        fallback={
-          <div className='flex justify-center items-center h-screen'>
-            <HashLoader color='#3b82f6' />
-          </div>
-        }
-      >
-        <Routes>
-          <Route
-            path={paths.home}
-            element={<Home />}
-          />
-          <Route
-            path={paths.notFound}
-            element={<NotFound />}
-          />
-        </Routes>
-      </Suspense>
-      <Footer />
-     </Router>
+      <Router>
+        <Navbar />
+        <Suspense
+          fallback={
+            <div className='flex justify-center items-center h-screen'>
+              <HashLoader color='#3b82f6' />
+            </div>
+          }
+        >
+          <Routes>
+            <Route
+              path={paths.home}
+              element={<Home />}
+            />
+            <Route path={paths.static} element={<Static/>}/>
+            <Route
+              path={paths.notFound}
+              element={<NotFound />}
+            />
+          </Routes>
+        </Suspense>
+        <Footer />
+      </Router>
     </>
   );
 };
 
 export default RoutesConfig;
-
