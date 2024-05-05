@@ -11,8 +11,8 @@ const NotFound = lazy(() => import('../pages/NotFound/NotFound.jsx'));
 
 // Import lazy-loaded components
 const Home = lazy(() => import('../pages/home/Home'));
-const Static = lazy(() => import('../components/Static.jsx'));
-const ReactJS = lazy(() => import('../components/ReactJS.jsx'));
+const Static = lazy(() => import('../template/Static.jsx'));
+const ReactJS = lazy(() => import('../template/ReactJS.jsx'));
 
 const RoutesConfig = () => {
   const paths = {

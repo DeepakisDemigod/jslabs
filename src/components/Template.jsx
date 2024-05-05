@@ -116,6 +116,7 @@ const Template = props => {
                         maxHeight: '100%',
                         overflow: 'auto'
                       }}
+                      className='font-mono'
                       showTabs
                       closableTabs
                       /*showInlineErrors

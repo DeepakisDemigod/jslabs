@@ -1,0 +1,21 @@
+{
+  "name": "javalabs",
+  "short_name": "labs",
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#192636",
+  "background_color": "#35383f",
+  "description": "create javalabs projects easily",
+  "icons": [
+    {
+      "src": "favicon.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "favicon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

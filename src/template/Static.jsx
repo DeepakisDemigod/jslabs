@@ -1,20 +1,17 @@
 import React, { useState, useEffect } from 'react';
-const Template = React.lazy(() => import('./Template.jsx'));
-
 import HashLoader from 'react-spinners/HashLoader';
+const Template = React.lazy(() => import('../components/Template.jsx'));
 
-const ReactJS = () => {
-  const [isLoading, setIsLoading] = useState(true); // Start with true to show the initial loading message
+const Static = props => {
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const intervalId = setInterval(() => {
-      setIsLoading(false); // Set isLoading to false after 900ms to stop showing the loading message
-      clearInterval(intervalId); // Clear the interval to prevent memory leaks
-    }, 4000);
-
-    // Clear the interval when the component unmounts
+      setIsLoading(false);
+      clearInterval(intervalId);
+    }, 3500);
     return () => clearInterval(intervalId);
-  }, []); // Specify an empty dependency array to run this effect only once
+  }, []);
 
   return (
     <>
@@ -33,7 +30,26 @@ const ReactJS = () => {
               </div>
             }
           >
-            <Template template='react' />
+            <Template
+              files={{
+                '/index.html': `<!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <title>JavaLabs</title>
+      <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+    <p>JavaLabs</p>
+    <script src="script.js"></script>
+    </body>
+  </html>`,
+                'script.js': `console.log('hello world')`
+              }}
+              options={{
+                visibleFiles: ['/index.html', '/styles.css', 'script.js']
+              }}
+              template='static'
+            />
           </React.Suspense>
         </div>
       )}
@@ -41,4 +57,4 @@ const ReactJS = () => {
   );
 };
 
-export default ReactJS;
+export default Static;
