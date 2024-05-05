@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 const NavbarHeader = React.lazy(() => import('../ui/NavbarHeader.jsx'));
-const NavbarSidebarr = React.lazy(() => import('../ui/NavbarSidebar.jsx'));
+const NavbarSidebar = React.lazy(() => import('../ui/NavbarSidebar.jsx'));
 
 const Navbar = () => {
   return (
