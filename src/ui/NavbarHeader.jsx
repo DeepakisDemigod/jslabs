@@ -1,9 +1,8 @@
 import React from 'react';
 import Logo from '../../public/favicon.png';
-import { useAuth0 } from '@auth0/auth0-react';
 
 const NavbarHeader = () => {
-  const { user, loginWithRedirect, isAuthenticated, logout } = useAuth0();
+  
   return (
     <div>
       <div className='w-full navbar flex items-center justify-between px-1 lg:px-2'>
@@ -40,30 +39,6 @@ const NavbarHeader = () => {
               width='30px'
             />
           </a>
-        </div>
-        <div>
-          {isAuthenticated ? (
-            <div>
-              <h3>hi, {user.name}</h3>
-              <button
-                className='btn bg-primary'
-                onClick={e =>
-                  logout({
-                    logoutParams: { returnTo: window.location.origin }
-                  })
-                }
-              >
-                SignOut
-              </button>
-            </div>
-          ) : (
-            <button
-              className='btn bg-primary'
-              onClick={e => loginWithRedirect()}
-            >
-              SignIn
-            </button>
-          )}
         </div>
       </div>
     </div>

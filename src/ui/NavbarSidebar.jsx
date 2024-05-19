@@ -7,11 +7,17 @@ import {
   FileJs,
   GlobeHemisphereWest
 } from 'phosphor-react';
+import { useAuth0 } from '@auth0/auth0-react';
+const CreateLab = React.lazy(() => import('./CreateLab.jsx'))
 
 const NavabarSidebar = () => {
+  const { user, loginWithRedirect, isAuthenticated, logout } = useAuth0();
   return (
     <div>
       <ul className='menu bg-base-200 w-56 rounded-box'>
+        <li>
+          <CreateLab />
+        </li>
         <li>
           <summary>
             <a
@@ -139,6 +145,30 @@ const NavabarSidebar = () => {
             <ul></ul>
           </details>
         </li>
+        <div>
+          {isAuthenticated ? (
+            <div>
+              <h3>hi, {user.name}</h3>
+              <button
+                className='btn bg-primary'
+                onClick={e =>
+                  logout({
+                    logoutParams: { returnTo: window.location.origin }
+                  })
+                }
+              >
+                SignOut
+              </button>
+            </div>
+          ) : (
+            <button
+              className='btn bg-primary'
+              onClick={e => loginWithRedirect()}
+            >
+              SignIn
+            </button>
+          )}
+        </div>
       </ul>
     </div>
   );

@@ -3,6 +3,12 @@ import HashLoader from 'react-spinners/HashLoader';
 const Template = React.lazy(() => import('../components/Template.jsx'));
 
 const Static = props => {
+  const onConfirmRefresh = (e) => {
+    e.preventDefault();
+    return (event.returnValue = 'Are you sure you want to leave the page?');
+  };
+
+  window.addEventListener('beforeunload', onConfirmRefresh, { capture: true });
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -49,6 +55,7 @@ const Static = props => {
                 visibleFiles: ['/index.html', '/styles.css', 'script.js']
               }}
               template='static'
+              option={{ resizablePanels: true }}
             />
           </React.Suspense>
         </div>

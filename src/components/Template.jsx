@@ -94,7 +94,7 @@ const Template = props => {
                     display: 'flex',
                     width: '100%',
                     minHeight: '300px',
-                    maxHeight: '300px',
+                    maxHeight: '500px',
                     backgroundColor: `var(--sp-colors-surface1)`
                   }}
                 >
@@ -108,7 +108,7 @@ const Template = props => {
                   >
                     <SandpackFileExplorer />
                   </div>
-                  <div style={{ flex: 'min-content' }}>
+                  <div style={{ flex: 'min-content', height: '1000px' }}>
                     <SandpackCodeEditor
                       wrapContent
                       style={{
@@ -118,19 +118,19 @@ const Template = props => {
                       }}
                       className='font-mono'
                       showTabs
-                      closableTabs
+                      /*closableTabs*/
                       /*showInlineErrors
                       extensions={[autocompletion()]}
                       extensionsKeymap={[completionKeymap]}*/
                     />
                   </div>
                 </div>
-                <SandpackPreview
-                  showNavigator={true}
-                  showOpenInCodeSandbox={false}
-                  /*showSyntaxError={true}*/
-                />
-                <SandpackConsole />
+                  <SandpackPreview
+                    showNavigator={true}
+                    showOpenInCodeSandbox={false}
+                    /*showSyntaxError={true}*/
+                  />
+                  <SandpackConsole />
               </SandpackLayout>
             </SandpackStack>
           </SandpackThemeProvider>
