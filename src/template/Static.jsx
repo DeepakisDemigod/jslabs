@@ -42,7 +42,7 @@ const Static = props => {
   <html lang="en">
     <head>
       <title>JavaLabs</title>
-      <link rel="stylesheet" href="style.css">
+      <link rel="stylesheet" href="styles.css">
     </head>
     <body>
     <p>JavaLabs</p>

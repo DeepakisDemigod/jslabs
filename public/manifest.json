@@ -1,6 +1,6 @@
 {
-  "name": "javalabs",
-  "short_name": "labs",
+  "name": "JavaLabs",
+  "short_name": "Labs",
   "start_url": ".",
   "display": "standalone",
   "theme_color": "#192636",

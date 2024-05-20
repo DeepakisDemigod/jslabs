@@ -1,5 +1,5 @@
 import React, { Suspense, lazy } from 'react';
-
+import './Template.css';
 const SandpackProvider = lazy(() =>
   import('@codesandbox/sandpack-react').then(module => ({
     default: module.SandpackProvider
@@ -46,6 +46,7 @@ const Template = props => {
   return (
     <Suspense fallback={<div>Loading...</div>}>
       <SandpackProvider
+      className="editor"
         files={props.files}
         options={props.options}
         template={props.template}
@@ -82,7 +83,7 @@ const Template = props => {
               font: {
                 body: '"IBM Plex Sans",-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
                 mono: '"Fira Mono", "DejaVu Sans Mono", Menlo, Consolas, "Liberation Mono", Monaco, "Lucida Console", monospace',
-                size: '14px',
+                size: '16px',
                 lineHeight: '21px'
               }
             }}
@@ -108,7 +109,7 @@ const Template = props => {
                   >
                     <SandpackFileExplorer />
                   </div>
-                  <div style={{ flex: 'min-content', height: '1000px' }}>
+                  <div style={{ flex: 'min-content' }}>
                     <SandpackCodeEditor
                       wrapContent
                       style={{
@@ -116,21 +117,21 @@ const Template = props => {
                         maxHeight: '100%',
                         overflow: 'auto'
                       }}
-                      className='font-mono'
                       showTabs
-                      /*closableTabs*/
+                      showLineNumbers='true'
+                      closableTabs
                       /*showInlineErrors
                       extensions={[autocompletion()]}
                       extensionsKeymap={[completionKeymap]}*/
                     />
                   </div>
                 </div>
-                  <SandpackPreview
-                    showNavigator={true}
-                    showOpenInCodeSandbox={false}
-                    /*showSyntaxError={true}*/
-                  />
-                  <SandpackConsole />
+                <SandpackPreview
+                  showNavigator={true}
+                  showOpenInCodeSandbox={false}
+                  /*showSyntaxError={true}*/
+                />
+                <SandpackConsole />
               </SandpackLayout>
             </SandpackStack>
           </SandpackThemeProvider>

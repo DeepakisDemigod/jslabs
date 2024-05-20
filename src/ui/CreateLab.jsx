@@ -1,18 +1,17 @@
 import React from 'react';
 
 const CreateLab = () => {
-
   return (
-    <div className='font-ibm bg-neutral flex items-center justify-center'>
+    <div className='border border-neutral text-zinc-400 font-ibm flex items-center justify-center'>
       {/* Open the modal using document.getElementById('ID').showModal() method */}
       <button
-        className=' text-white'
-        onClick={() => document.getElementById('my_modal_2').showModal()}
+        className='text-white'
+        onClick={() => document.getElementById('create-lab').showModal()}
       >
         + Create Lab
       </button>
       <dialog
-        id='my_modal_2'
+        id='create-lab'
         className='modal'
       >
         <div className='modal-box'>
@@ -32,7 +31,7 @@ const CreateLab = () => {
               <option value='Node JavaScript' />
             </datalist>
           </label>
-          <br/>
+          <br />
           <div>
             <button className='btn w-full w-min-70 w-max-100 bg-neutral'>
               Create Lab

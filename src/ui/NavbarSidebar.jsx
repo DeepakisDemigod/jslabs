@@ -8,16 +8,17 @@ import {
   GlobeHemisphereWest
 } from 'phosphor-react';
 import { useAuth0 } from '@auth0/auth0-react';
-const CreateLab = React.lazy(() => import('./CreateLab.jsx'))
+const CreateLab = React.lazy(() => import('./CreateLab.jsx'));
 
 const NavabarSidebar = () => {
   const { user, loginWithRedirect, isAuthenticated, logout } = useAuth0();
   return (
     <div>
-      <ul className='menu bg-base-200 w-56 rounded-box'>
+      <ul className='menu w-56 rounded-box'>
         <li>
           <CreateLab />
         </li>
+        <br />
         <li>
           <summary>
             <a
