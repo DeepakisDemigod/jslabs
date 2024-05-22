@@ -9,7 +9,7 @@ export default {
           secondary: '#35383f',
           tertiary: '#41454c',
           quater: '#696e79',
-          neutral: '#2563eb',
+          neutral: '#04b374',
           'base-100': '#0d141c',
           lining: '#2d313c',
           info: '#2563eb',

@@ -45,98 +45,99 @@ const SandpackFileExplorer = lazy(() =>
 const Template = props => {
   return (
     <Suspense fallback={<div>Loading...</div>}>
-      <SandpackProvider
-      className="editor"
-        files={props.files}
-        options={props.options}
-        template={props.template}
-      >
-        <div className='border-neutral'>
-          <SandpackThemeProvider
-            theme={{
-              colors: {
-                surface1: '#0d141c',
-                surface2: '#21252b',
-                surface3: '#192636',
-                clickable: '#a8b1c2',
-                base: '#a8b1c2',
-                disabled: '#4d4d4d',
-                hover: '#e8effc',
-                accent: '#3b82f6',
-                error: '#e06c75',
-                errorSurface: '#ffeceb'
-              },
-              syntax: {
-                plain: '#a8b1c2',
-                comment: {
-                  color: '#757575',
-                  fontStyle: 'italic'
+      
+        <SandpackProvider
+          className='editor'
+          files={props.files}
+          options={props.options}
+          template={props.template}
+        >
+          <div className='border-neutral'>
+            <SandpackThemeProvider
+              theme={{
+                colors: {
+                  surface1: '#0d141c',
+                  surface2: '#21252b',
+                  surface3: '#192636',
+                  clickable: '#a8b1c2',
+                  base: '#a8b1c2',
+                  disabled: '#4d4d4d',
+                  hover: '#e8effc',
+                  accent: '#3b82f6',
+                  error: '#e06c75',
+                  errorSurface: '#ffeceb'
                 },
-                keyword: '#c678dd',
-                tag: '#e06c75',
-                punctuation: '#a8b1c2',
-                definition: '#62aeef',
-                property: '#d19a66',
-                static: '#a8b1c2',
-                string: '#98c379'
-              },
-              font: {
-                body: '"IBM Plex Sans",-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
-                mono: '"Fira Mono", "DejaVu Sans Mono", Menlo, Consolas, "Liberation Mono", Monaco, "Lucida Console", monospace',
-                size: '16px',
-                lineHeight: '21px'
-              }
-            }}
-          >
-            <SandpackStack>
-              <SandpackLayout>
-                <div
-                  style={{
-                    display: 'flex',
-                    width: '100%',
-                    minHeight: '300px',
-                    maxHeight: '500px',
-                    backgroundColor: `var(--sp-colors-surface1)`
-                  }}
-                >
+                syntax: {
+                  plain: '#a8b1c2',
+                  comment: {
+                    color: '#757575',
+                    fontStyle: 'italic'
+                  },
+                  keyword: '#c678dd',
+                  tag: '#e06c75',
+                  punctuation: '#a8b1c2',
+                  definition: '#62aeef',
+                  property: '#d19a66',
+                  static: '#a8b1c2',
+                  string: '#98c379'
+                },
+                font: {
+                  body: '"IBM Plex Sans",-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
+                  mono: '"Fira Mono", "DejaVu Sans Mono", Menlo, Consolas, "Liberation Mono", Monaco, "Lucida Console", monospace',
+                  size: '14px',
+                  lineHeight: '18px'
+                }
+              }}
+            >
+              <SandpackStack>
+                <SandpackLayout>
                   <div
-                    className='hidden sm:block'
                     style={{
-                      minWidth: 150,
-                      maxWidth: '300px',
-                      overflow: 'hidden'
+                      display: 'flex',
+                      width: '100%',
+                      minHeight: '300px',
+                      maxHeight: '500px',
+                      backgroundColor: `var(--sp-colors-surface1)`
                     }}
                   >
-                    <SandpackFileExplorer />
-                  </div>
-                  <div style={{ flex: 'min-content' }}>
-                    <SandpackCodeEditor
-                      wrapContent
+                    <div
+                      className='hidden sm:block'
                       style={{
-                        minHeight: '100%',
-                        maxHeight: '100%',
-                        overflow: 'auto'
+                        minWidth: 150,
+                        maxWidth: '300px',
+                        overflow: 'hidden'
                       }}
-                      showTabs
-                      showLineNumbers='true'
-                      closableTabs
-                      /*showInlineErrors
+                    >
+                      <SandpackFileExplorer />
+                    </div>
+                    <div style={{ flex: 'min-content' }}>
+                      <SandpackCodeEditor
+                        wrapContent
+                        style={{
+                          minHeight: '100%',
+                          maxHeight: '100%',
+                          overflow: 'auto'
+                        }}
+                        showTabs
+                        showLineNumbers='true'
+                        closableTabs
+                        /*showInlineErrors
                       extensions={[autocompletion()]}
                       extensionsKeymap={[completionKeymap]}*/
-                    />
+                      />
+                    </div>
                   </div>
-                </div>
-                <SandpackPreview
-                  showNavigator={true}
-                  showOpenInCodeSandbox={false}
-                  /*showSyntaxError={true}*/
-                />
-                <SandpackConsole />
-              </SandpackLayout>
-            </SandpackStack>
-          </SandpackThemeProvider>
-        </div>
-      </SandpackProvider>
+                  <SandpackPreview
+                    showNavigator={true}
+                    showOpenInCodeSandbox={false}
+                    /*showSyntaxError={true}*/
+                  />
+                  <SandpackConsole />
+                </SandpackLayout>
+              </SandpackStack>
+            </SandpackThemeProvider>
+          </div>
+        </SandpackProvider>
     </Suspense>
   );
 };

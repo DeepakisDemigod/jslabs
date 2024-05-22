@@ -23,7 +23,7 @@ const Static = props => {
     <>
       {isLoading ? (
         <div className='h-[87vh] flex flex-col items-center justify-center gap-4'>
-          <HashLoader color='#2563eb' />
+          <HashLoader color='#04b374' />
           <span>Brewing Console...</span>
         </div>
       ) : (
@@ -31,7 +31,7 @@ const Static = props => {
           <React.Suspense
             fallback={
               <div className='h-[87vh] flex flex-col items-center justify-center gap-4 '>
-                <HashLoader color='#2563eb' />
+                <HashLoader color='#04b374' />
                 <span>Almost Ready...</span>
               </div>
             }

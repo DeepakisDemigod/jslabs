@@ -2,7 +2,7 @@ import React from 'react';
 
 const CreateLab = () => {
   return (
-    <div className='border border-neutral text-zinc-400 font-ibm flex items-center justify-center'>
+    <div className='border border-zinc-400 text-zinc-300 font-ibm flex items-center justify-center'>
       {/* Open the modal using document.getElementById('ID').showModal() method */}
       <button
         className='text-white'

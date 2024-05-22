@@ -3,5 +3,6 @@
 }
 
 * {
-  font-family: 'IBM Plex Sans', sans-serif;
+  font-family: 'IBM Plex Sans', monospace;
+  font-weight: 400;
 }

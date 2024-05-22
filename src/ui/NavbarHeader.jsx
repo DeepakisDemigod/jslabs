@@ -1,5 +1,5 @@
 import React from 'react';
-import Logo from '../../public/favicon.png';
+import Logo from '../../public/logo.png';
 
 const NavbarHeader = () => {
   

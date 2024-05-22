@@ -16,7 +16,7 @@ const ReactJS = () => {
     <>
       {isLoading ? (
         <div className='h-[87vh] flex flex-col items-center justify-center gap-4'>
-          <HashLoader color='#2563eb' />
+          <HashLoader color='#04b374' />
           <span>Brewing Console...</span>
         </div>
       ) : (
@@ -24,12 +24,17 @@ const ReactJS = () => {
           <React.Suspense
             fallback={
               <div className='h-[87vh] flex flex-col items-center justify-center gap-4 '>
-                <HashLoader color='#2563eb' />
+                <HashLoader color='#04b374' />
                 <span>Almost Ready...</span>
               </div>
             }
           >
-            <Template template='react' />
+            <Template
+              template='react'
+              options={{
+                visibleFiles: ['index.js', '/App.js', '/styles.css']
+              }}
+            />
           </React.Suspense>
         </div>
       )}
